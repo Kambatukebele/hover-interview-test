@@ -1,0 +1,22 @@
+<section></section>
+
+{% schema %}
+{
+  "name": "Custom main product",
+  "class": "custom_main_product",
+  "disabled_on": {
+    "groups": ["header", "footer"],
+    "templates": ["index", "404", "article", "collection"]
+  },
+  "limit": 1,
+  "blocks": [],
+  "settings": [],
+  "presets": [
+    {
+      "name": "Custom main product",
+      "settings": {},
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}
