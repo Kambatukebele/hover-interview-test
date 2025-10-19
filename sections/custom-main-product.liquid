@@ -89,7 +89,122 @@
   }
 {% endstyle %}
 
-<section class="custom-product"></section>
+<section class="custom-product">
+  <div class="custom-product__container">
+    <!-- product images -->
+    <div>
+      <div>
+        {{ 'product-1' | placeholder_svg_tag }}
+        <span>Hautement dosé</span>
+      </div>
+      <div>
+        {{ 'product-1' | placeholder_svg_tag }}
+      </div>
+      <div>
+        {{ 'product-1' | placeholder_svg_tag }}
+      </div>
+      <div>
+        {{ 'product-1' | placeholder_svg_tag }}
+      </div>
+    </div>
+    <!-- product details -->
+    <div>
+      <!-- Trustpilot, Title, description, price block -->
+      <div>
+        <div>
+          <div>
+            <!-- Trustpilot -->
+            <div>
+              <span>Excellent</span>
+              <img
+                width="221"
+                height="50"
+                src="{{ "Trustpilot-etoiles.png" | asset_url }}"
+                alt="Trustpilot etoiles icon"
+              >
+              <img width="255" height="48" src="{{ "Trustpilot-logo.png" | asset_url }}" alt="Trustpilot logo icon">
+            </div>
+            <!-- Text, price -->
+            <div>
+              <h1>Lorem ipsum</h1>
+              <span>35,00$</span>
+            </div>
+          </div>
+          <!-- Description and list -->
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipiscing elit suscipit nec, mus neque ullamcorper augue nascetur
+              eros vel et leo,
+            </p>
+            <ul>
+              <li>
+                <img width="20" height="20" src="{{ "Check-icon.png" | asset_url }}" alt="Check icon">
+                <span>Lorem ipsum dolor sit amet</span>
+              </li>
+              <li>
+                <img width="20" height="20" src="{{ "Check-icon.png" | asset_url }}" alt="Check icon">
+                <span>Lorem ipsum dolor sit amet</span>
+              </li>
+              <li>
+                <img width="20" height="20" src="{{ "Check-icon.png" | asset_url }}" alt="Check icon">
+                <span>Lorem ipsum dolor sit amet</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Price decouverte and meilleure offre -->
+        <div>
+          <!-- price card -->
+          <div>
+            <div>
+              <h4>1 mois</h4>
+              <span> -10%</span>
+              <p>Soit 1,16$ / jour</p>
+            </div>
+            <span>Découverte</span>
+          </div>
+          <!-- price card -->
+          <div>
+            <div>
+              <h4>1 mois</h4>
+              <span> -10%</span>
+              <p>Soit 1,16$ / jour</p>
+            </div>
+            <span>Découverte</span>
+          </div>
+        </div>
+      </div>
+      <!-- Add to to cart button block -->
+      <div>
+        <button>
+          <span>Ajouter au panier</span>
+          <span> |</span>
+          <span>35$</span>
+        </button>
+        <span> <strong>En stock</strong>, commandez maintenant et soyez <strong>livré le 25 mars"</strong></span>
+      </div>
+      <!-- Bienfaits block -->
+      <div>
+        <!-- card -->
+        <div>
+          <div>
+            <span>Bienfaits et Efficacité</span>
+            <span>
+              <img width="20" height="20" src="{{ 'Dropdown-arrow.png' | asset_url }}">
+            </span>
+          </div>
+          <div>
+            Lorem ipsum dolor sit amet consectetur adipiscing elit maecenas nam elementum, integer aliquet vivamus
+            himenaeos dui facilisis rutrum magnis vitae quam, tempus varius sodales malesuada semper pretium fermentum
+            accumsan tincidunt. Dapibus habitant phasellus venenatis dignissim sed litora nibh ullamcorper, dis duis
+            aliquet praesent mi donec vivamus egestas rhoncus, commodo nam nostra integer iaculis vehicula sapien.
+            Senectus pharetra cum himenaeo
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 {% schema %}
 {
