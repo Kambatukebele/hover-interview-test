@@ -33,6 +33,7 @@
     --line-height-h4: 115%;
     --line-height-body: 150%;
   }
+
   h1,
   h2,
   h3,
@@ -70,82 +71,607 @@
   h4 {
     font-size: 16px;
   }
+  /*----- Product section css on mobile ------ */
+  .custom-product {
+    width: 100vw;
+    height: 100%;
+  }
+  .customProduct__container {
+    width: 90%;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  /* ----- customProduct__images -------- */
+  .customProduct__images {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 1rem;
+    scroll-padding-inline: 1rem;
+    scroll-behavior: smooth;
+  }
+  /* scroll bar */
+  .customProduct__images::-webkit-scrollbar {
+    height: 3px;
+  }
+  .customProduct__images::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 0 20px; /* padding */
+  }
+  .customProduct__images::-webkit-scrollbar-thumb {
+    background: #000; /* adjust to match figma color */
+    border-radius: 2px;
+  }
+  .customProduct__images::-webkit-scrollbar-thumb:hover {
+    background: #444;
+  }
 
-  @media (min-width: 1024px) {
-    body {
-      h1 {
-        font-size: 48px;
-      }
-      h2 {
-        font-size: 38px;
-      }
-      h3 {
-        font-size: 30px;
-      }
-      h4 {
-        font-size: 20px;
-      }
+  /* ------ Product Card ------ */
+  .customProduct__card {
+    flex: 0 0 80%;
+    max-width: 340px;
+    aspect-ratio: 340 / 351;
+    background: #f9f9f9;
+    overflow: hidden;
+    scroll-snap-align: start;
+    position: relative;
+  }
+
+  .customProduct__card img,
+  .customProduct__card svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* ------ Announcement Badge ------ */
+  .customProduct__card--announcement {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #e2f2f3;
+    color: #171714;
+    font-size: 10px;
+    line-height: var(--line-height-body);
+    padding: 6px 12px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10px;
+  }
+
+  /*
+          * customProduct__details
+        */
+  .customProduct__details {
+  }
+  .details__reviews-text {
+    height: 100%;
+    height: 64px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .details__reviews {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 3px;
+    height: 19px;
+  }
+  .details__reviews span {
+    font-size: 12px;
+    line-height: var(--line-height-body);
+    color: rgba(26, 26, 26, 1);
+    font-weight: 500;
+  }
+  .details__reviews img:first-child {
+    width: 74px;
+    height: 14px;
+    aspect-ratio: 74 / 14;
+  }
+  .details__reviews img:nth-child(2) {
+    width: 72px;
+    height: 16px;
+    aspect-ratio: 72 / 16;
+  }
+  /* -----  Text and Price */
+  .details__text-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+  }
+  .details__text {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: var(--line-height-h4);
+    color: rgba(23, 23, 20, 1);
+  }
+  .details__price {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: var(--line-height-h4);
+    color: rgba(37, 37, 37, 1);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+  }
+
+  /* Description */
+  .details__description-list {
+    min-height: 126px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    align-items: flex-start;
+    gap: 15px;
+    margin: 0px;
+  }
+  .customProduct__description {
+    font-size: 12px;
+    line-height: var(--line-height-body);
+    color: rgba(23, 23, 20, 1);
+  }
+  .customProduct__listBlock {
+    width: 100%;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    gap: 6px;
+    padding: 0;
+    list-style: none;
+  }
+  .customProduct__list {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6px;
+  }
+  .customProduct__list img {
+    display: block;
+    height: 100%;
+  }
+  .customProduct__list span {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: var(--line-height-body);
+    height: 100%;
+    display: block;
+  }
+  .customProduct__details {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  .details__container {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+  }
+
+  .details__reviews-text-description-price {
+    display: flex;
+    flex-direction: column;
+  }
+  .details__price-offer-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    max-height: 78px;
+    gap: 20px;
+  }
+  .details__price__card {
+    position: relative;
+    flex: 1;
+    max-width: 166px;
+    width: 100%;
+    height: 78px;
+    border-radius: 10px;
+    padding: 20px 10px 15px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+  }
+  .details__price__card--modify {
+    background-color: rgba(226, 242, 243, 1);
+    /* color: ; */
+  }
+  .details__price__card-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    max-height: 43px;
+    gap: 10px;
+  }
+  .details__price__card-block h4 {
+    font-size: 18px;
+    line-height: var(--line-height-h4);
+    color: rgba(23, 23, 20, 1);
+    font-weight: 900;
+    margin: 0px;
+  }
+  .details__sales_price-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+  }
+  .details__sales {
+    font-size: 10px;
+    line-height: var(--line-height-body);
+    font-weight: 500;
+    background-color: rgba(23, 23, 20, 1);
+    padding: 1px 6px;
+    border-radius: 10px;
+    color: white;
+  }
+  .details__sales_price {
+    font-size: 10px;
+    line-height: var(--line-height-body);
+    font-weight: 400;
+    margin: 0px;
+  }
+  .details__decouverte {
+    position: absolute;
+    top: 0px;
+    left: 50px;
+    transform: translate(-50%, -50%);
+    font-size: 10px;
+    line-height: var(--line-height-body);
+    font-weight: 400;
+    padding: 2px 8px;
+    border-radius: 100px;
+    width: fit-content;
+    margin: 0px auto;
+    z-index: 2;
+    color: rgba(23, 23, 20, 1);
+    background-color: rgba(200, 228, 230, 1);
+  }
+
+  /* Add to to cart button block */
+  .details__buttons {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .details__buttons-btn {
+    width: 100%;
+    height: 54px;
+    font-size: 14px;
+    line-height: var(--line-height-body);
+    font-weight: 500;
+    background-color: rgba(23, 23, 23, 1);
+    color: white;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 35px;
+    border-radius: 100px;
+    border: none;
+  }
+  .details__buttons-text {
+    font-size: 10px;
+    line-height: var(--line-height-body);
+    font-weight: 500;
+    color: rgba(23, 23, 20, 1);
+  }
+
+  /* details__bienfaits */
+  .details__bienfaits {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .bienfaits__card {
+    padding: 20px 0px;
+  }
+  .bienfaits__heading-block {
+    display: flex;
+    justify-content: space-between;
+  }
+  .bienfaits__heading {
+    font-size: 14px;
+    line-height: var(--line-height-body);
+    font-weight: 400;
+    color: rgba(23, 23, 20, 1);
+  }
+  .bienfaits__body {
+    font-size: 12px;
+    line-height: var(--line-height-body);
+    font-weight: 400;
+    color: rgba(23, 23, 20, 1);
+  }
+
+  @media screen and (min-width: 750px) {
+    /* ----- customProduct__images -------- */
+    /* .customProduct__images {
+      gap: 1.5rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+    } */
+    /* ----- customProduct__card -------- */
+    /* .customProduct__card {
+      flex: 0 0 60%;
+      max-width: 400px;
+    } */
+    /* --- Product Container --- */
+    .customProduct__container {
+      width: 90%;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    /* Keep scrolling layout until 989px */
+    .customProduct__images {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 1.5rem;
+      scroll-behavior: smooth;
+      padding-bottom: 1rem;
+    }
+
+    .customProduct__card {
+      flex: 0 0 60%;
+      max-width: 400px;
+      scroll-snap-align: start;
+    }
+
+    .details__price-offer-container {
+      justify-content: flex-start;
+      gap: 1.5rem;
+    }
+
+    /* Ensure .details__decouverte always stays centered */
+    .details__decouverte {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 10px;
+      line-height: var(--line-height-body);
+      padding: 3px 8px;
+      border-radius: 100px;
+      background-color: rgba(200, 228, 230, 1);
+      color: rgba(23, 23, 20, 1);
+      z-index: 2;
+    }
+  }
+  @media screen and (min-width: 990px) {
+    /* ----- Desktop size setup ----- */
+    /* h1 {
+      font-size: 48px;
+    }
+    h2 {
+      font-size: 38px;
+    }
+    h3 {
+      font-size: 30px;
+    }
+    h4 {
+      font-size: 20px;
+    }
+    .custom-product {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+
+    .customProduct__texts {
+      flex: 1;
+      padding-right: 2rem;
+    }
+
+    .customProduct__images {
+      flex: 1;
+      max-width: 50vw;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 1rem;
+      overflow: visible;
+    }
+
+
+    .customProduct__card--main {
+      grid-column: 1 / 3;
+      grid-row: 1;
+      width: 100%;
+      height: auto;
+    }
+
+
+    .customProduct__card:not(.customProduct__card--main) {
+      grid-row: 2;
+      width: 100%;
+      height: 100%;
+    }
+
+    .customProduct__card {
+      flex: none;
+      scroll-snap-align: none;
+      max-width: 100%;
+      aspect-ratio: 1 / 1;
+    } */
+    /* Main layout */
+    .customProduct__container {
+      width: 90%;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    /* Keep scrolling horizontal product section */
+    .customProduct__images {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      gap: 1.5rem;
+      padding-bottom: 1rem;
+    }
+
+    .customProduct__card {
+      flex: 0 0 55%;
+      max-width: 400px;
+      scroll-snap-align: start;
+    }
+
+    /* Text section remains below */
+    .customProduct__details {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    /* Keep discovery badge perfectly centered */
+    .details__decouverte {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 10px;
+      line-height: var(--line-height-body);
+      font-weight: 400;
+      padding: 3px 8px;
+      border-radius: 100px;
+      background-color: rgba(200, 228, 230, 1);
+      color: rgba(23, 23, 20, 1);
+      z-index: 2;
+    }
+  }
+  @media screen and (min-width: 1150px) {
+    .customProduct__container {
+      width: 80%;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 4rem;
+      border: 1px solid black;
+    }
+
+    /* --- Images take 50% of the screen --- */
+    .customProduct__images {
+      flex: 0 0 50%;
+      max-width: 50%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto auto;
+      gap: 1rem;
+    }
+
+    /* First image takes full width (100%) */
+    .customProduct__card--main {
+      grid-column: 1 / 5;
+      grid-row: 1;
+      width: 100%;
+      height: auto;
+    }
+
+    /* Remaining images: each 25% width side by side */
+    .customProduct__card:not(.customProduct__card--main) {
+      grid-row: 2;
+      grid-column: auto;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+    }
+
+    /* --- Text section takes the other half --- */
+    .customProduct__details {
+      flex: 0 0 50%;
+      max-width: 50%;
+      /* padding-left: 3rem; */
+    }
+
+    /* Keep discovery badge centered and visible */
+    .details__decouverte {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 5;
     }
   }
 {% endstyle %}
 
-<section class="custom-product">
-  <div class="custom-product__container">
+<section class="customProduct">
+  <div class="customProduct__container">
     <!-- product images -->
-    <div>
-      <div>
+    <div class="customProduct__images">
+      <div class="customProduct__card customProduct__card--main">
         {{ 'product-1' | placeholder_svg_tag }}
-        <span>Hautement dosé</span>
+        <span class="customProduct__card--announcement">Hautement dosé</span>
       </div>
-      <div>
-        {{ 'product-1' | placeholder_svg_tag }}
-      </div>
-      <div>
+      <div class="customProduct__card">
         {{ 'product-1' | placeholder_svg_tag }}
       </div>
-      <div>
+      <div class="customProduct__card">
+        {{ 'product-1' | placeholder_svg_tag }}
+      </div>
+      <div class="customProduct__card">
         {{ 'product-1' | placeholder_svg_tag }}
       </div>
     </div>
+
     <!-- product details -->
-    <div>
+    <div class="customProduct__details">
       <!-- Trustpilot, Title, description, price block -->
-      <div>
-        <div>
-          <div>
+      <div class="details__container">
+        <div class="details__reviews-text-description-price">
+          <div class="details__reviews-text">
             <!-- Trustpilot -->
-            <div>
+            <div class="details__reviews">
               <span>Excellent</span>
               <img
-                width="221"
-                height="50"
+                width="74"
+                height="14"
                 src="{{ "Trustpilot-etoiles.png" | asset_url }}"
                 alt="Trustpilot etoiles icon"
               >
-              <img width="255" height="48" src="{{ "Trustpilot-logo.png" | asset_url }}" alt="Trustpilot logo icon">
+              <span>17.102 avis</span>
+              <img width="72" height="16" src="{{ "Trustpilot-logo.png" | asset_url }}" alt="Trustpilot logo icon">
             </div>
             <!-- Text, price -->
-            <div>
-              <h1>Lorem ipsum</h1>
-              <span>35,00$</span>
+            <div class="details__text-price">
+              <h1 class="details__text">Lorem ipsum</h1>
+              <span class="details__price">35,00$</span>
             </div>
           </div>
           <!-- Description and list -->
-          <div>
-            <p>
+          <div class="details__description-list">
+            <p class="customProduct__description">
               Lorem ipsum dolor sit amet consectetur adipiscing elit suscipit nec, mus neque ullamcorper augue nascetur
               eros vel et leo,
             </p>
-            <ul>
-              <li>
+            <ul class="customProduct__listBlock">
+              <li class="customProduct__list">
                 <img width="20" height="20" src="{{ "Check-icon.png" | asset_url }}" alt="Check icon">
                 <span>Lorem ipsum dolor sit amet</span>
               </li>
-              <li>
+              <li class="customProduct__list">
                 <img width="20" height="20" src="{{ "Check-icon.png" | asset_url }}" alt="Check icon">
                 <span>Lorem ipsum dolor sit amet</span>
               </li>
-              <li>
+              <li class="customProduct__list">
                 <img width="20" height="20" src="{{ "Check-icon.png" | asset_url }}" alt="Check icon">
                 <span>Lorem ipsum dolor sit amet</span>
               </li>
@@ -153,47 +679,53 @@
           </div>
         </div>
         <!-- Price decouverte and meilleure offre -->
-        <div>
+        <div class="details__price-offer-container">
           <!-- price card -->
-          <div>
-            <div>
+          <div class="details__price__card details__price__card--modify">
+            <div class="details__price__card-block">
               <h4>1 mois</h4>
-              <span> -10%</span>
-              <p>Soit 1,16$ / jour</p>
+              <div class="details__sales_price-block">
+                <span class="details__sales"> -10%</span>
+                <p class="details__sales_price">Soit 1,16$ / jour</p>
+              </div>
             </div>
-            <span>Découverte</span>
+            <span class="details__decouverte">Découverte</span>
           </div>
           <!-- price card -->
-          <div>
-            <div>
+          <div class="details__price__card details__price__card--modify">
+            <div class="details__price__card-block">
               <h4>1 mois</h4>
-              <span> -10%</span>
-              <p>Soit 1,16$ / jour</p>
+              <div class="details__sales_price-block">
+                <span class="details__sales"> -10%</span>
+                <p class="details__sales_price">Soit 1,16$ / jour</p>
+              </div>
             </div>
-            <span>Découverte</span>
+            <span class="details__decouverte">Découverte</span>
           </div>
         </div>
       </div>
       <!-- Add to to cart button block -->
-      <div>
-        <button>
+      <div class="details__buttons">
+        <button class="details__buttons-btn">
           <span>Ajouter au panier</span>
           <span> |</span>
           <span>35$</span>
         </button>
-        <span> <strong>En stock</strong>, commandez maintenant et soyez <strong>livré le 25 mars"</strong></span>
+        <span class="details__buttons-text">
+          <strong>En stock</strong>, commandez et soyez <strong>livré le 25 mars"</strong></span
+        >
       </div>
       <!-- Bienfaits block -->
-      <div>
+      <div class="details__bienfaits">
         <!-- card -->
-        <div>
-          <div>
-            <span>Bienfaits et Efficacité</span>
-            <span>
-              <img width="20" height="20" src="{{ 'Dropdown-arrow.png' | asset_url }}">
+        <div class="bienfaits__card">
+          <div class="bienfaits__heading-block">
+            <span class="bienfaits__heading">Bienfaits et Efficacité</span>
+            <span class="bienfaits__icon">
+              <img class="bienfaits__icon-img" width="22" height="22" src="{{ 'Dropdown-arrow.png' | asset_url }}">
             </span>
           </div>
-          <div>
+          <div class="bienfaits__body">
             Lorem ipsum dolor sit amet consectetur adipiscing elit maecenas nam elementum, integer aliquet vivamus
             himenaeos dui facilisis rutrum magnis vitae quam, tempus varius sodales malesuada semper pretium fermentum
             accumsan tincidunt. Dapibus habitant phasellus venenatis dignissim sed litora nibh ullamcorper, dis duis
