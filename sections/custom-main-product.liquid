@@ -613,7 +613,7 @@
       max-width: 677px;
       height: 656px;
       width: 100%;
-      border-radius: 30px;
+      border-radius: {{ section.settings.product_card_radius }}px;
       flex-grow: 1;
       flex-basis: auto;
       align-self: auto;
@@ -624,7 +624,7 @@
       flex: 0 0 50%;
       max-width: 328px;
       height: 330px;
-      border-radius: 30px;
+      border-radius: {{ section.settings.product_card_radius }}px;
       flex-basis: auto;
       align-self: auto;
       order: 0;
@@ -635,7 +635,7 @@
       flex: 0 0 50%;
       max-width: 328px;
       height: 330px;
-      border-radius: 30px;
+      border-radius: {{ section.settings.product_card_radius }}px;
       flex-grow: 1;
       flex-shrink: 1;
       flex-basis: auto;
@@ -648,7 +648,7 @@
       flex: 0 0 50%;
       max-width: 328px;
       height: 330px;
-      border-radius: 30px;
+      border-radius: {{ section.settings.product_card_radius }}px;
       flex-basis: auto;
       align-self: auto;
       order: 0;
@@ -659,7 +659,7 @@
       flex: 0 0 50%;
       max-width: 328px;
       height: 330px;
-      border-radius: 30px;
+      border-radius: {{ section.settings.product_card_radius }}px;
       flex-basis: auto;
       align-self: auto;
       order: 0;
@@ -958,13 +958,28 @@
       "unit": "px",
       "step": 1,
       "default": 45
+    },
+    {
+      "type": "header",
+      "content": "Product card radius settings"
+    },
+    {
+      "type": "range",
+      "id": "product_card_radius",
+      "label": "Product card corner radius",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 30
     }
   ],
   "presets": [
     {
       "name": "Custom main product",
       "settings": {
-        "product_paddingY": 45
+        "product_paddingY": 45,
+        "product_card_radius": 30
       },
       "blocks": []
     }
