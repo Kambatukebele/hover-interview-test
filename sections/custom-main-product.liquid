@@ -33,7 +33,18 @@
     --line-height-h4: 115%;
     --line-height-body: 150%;
   }
-
+  .hidden {
+    display: none;
+  }
+  .block {
+    display: block;
+  }
+  .flex {
+    display: flex;
+  }
+  .rotate-180 {
+    rotate: 180deg;
+  }
   h1,
   h2,
   h3,
@@ -849,7 +860,7 @@
         <div class="bienfaits__card">
           <div class="bienfaits__heading-block">
             <span class="bienfaits__heading">Bienfaits et Efficacité</span>
-            <span class="bienfaits__icon">
+            <span class="bienfaits__icon rotate-180">
               <img class="bienfaits__icon-img" width="22" height="22" src="{{ 'Dropdown-arrow.png' | asset_url }}">
             </span>
           </div>
@@ -861,10 +872,101 @@
             Senectus pharetra cum himenaeo
           </div>
         </div>
+        <!-- card -->
+        <div class="bienfaits__card">
+          <div class="bienfaits__heading-block">
+            <span class="bienfaits__heading">Bienfaits et Efficacité</span>
+            <span class="bienfaits__icon">
+              <img class="bienfaits__icon-img" width="22" height="22" src="{{ 'Dropdown-arrow.png' | asset_url }}">
+            </span>
+          </div>
+          <div class="bienfaits__body hidden">
+            Lorem ipsum dolor sit amet consectetur adipiscing elit maecenas nam elementum, integer aliquet vivamus
+            himenaeos dui facilisis rutrum magnis vitae quam, tempus varius sodales malesuada semper pretium fermentum
+            accumsan tincidunt. Dapibus habitant phasellus venenatis dignissim sed litora nibh ullamcorper, dis duis
+            aliquet praesent mi donec vivamus egestas rhoncus, commodo nam nostra integer iaculis vehicula sapien.
+            Senectus pharetra cum himenaeo
+          </div>
+        </div>
+        <!-- card -->
+        <div class="bienfaits__card">
+          <div class="bienfaits__heading-block">
+            <span class="bienfaits__heading">Bienfaits et Efficacité</span>
+            <span class="bienfaits__icon">
+              <img class="bienfaits__icon-img" width="22" height="22" src="{{ 'Dropdown-arrow.png' | asset_url }}">
+            </span>
+          </div>
+          <div class="bienfaits__body hidden">
+            Lorem ipsum dolor sit amet consectetur adipiscing elit maecenas nam elementum, integer aliquet vivamus
+            himenaeos dui facilisis rutrum magnis vitae quam, tempus varius sodales malesuada semper pretium fermentum
+            accumsan tincidunt. Dapibus habitant phasellus venenatis dignissim sed litora nibh ullamcorper, dis duis
+            aliquet praesent mi donec vivamus egestas rhoncus, commodo nam nostra integer iaculis vehicula sapien.
+            Senectus pharetra cum himenaeo
+          </div>
+        </div>
+        <!-- card -->
+        <div class="bienfaits__card">
+          <div class="bienfaits__heading-block">
+            <span class="bienfaits__heading">Bienfaits et Efficacité</span>
+            <span class="bienfaits__icon">
+              <img class="bienfaits__icon-img" width="22" height="22" src="{{ 'Dropdown-arrow.png' | asset_url }}">
+            </span>
+          </div>
+          <div class="bienfaits__body hidden">
+            Lorem ipsum dolor sit amet consectetur adipiscing elit maecenas nam elementum, integer aliquet vivamus
+            himenaeos dui facilisis rutrum magnis vitae quam, tempus varius sodales malesuada semper pretium fermentum
+            accumsan tincidunt. Dapibus habitant phasellus venenatis dignissim sed litora nibh ullamcorper, dis duis
+            aliquet praesent mi donec vivamus egestas rhoncus, commodo nam nostra integer iaculis vehicula sapien.
+            Senectus pharetra cum himenaeo
+          </div>
+        </div>
+        <!-- card -->
+        <div class="bienfaits__card">
+          <div class="bienfaits__heading-block">
+            <span class="bienfaits__heading">Bienfaits et Efficacité</span>
+            <span class="bienfaits__icon">
+              <img class="bienfaits__icon-img" width="22" height="22" src="{{ 'Dropdown-arrow.png' | asset_url }}">
+            </span>
+          </div>
+          <div class="bienfaits__body hidden">
+            Lorem ipsum dolor sit amet consectetur adipiscing elit maecenas nam elementum, integer aliquet vivamus
+            himenaeos dui facilisis rutrum magnis vitae quam, tempus varius sodales malesuada semper pretium fermentum
+            accumsan tincidunt. Dapibus habitant phasellus venenatis dignissim sed litora nibh ullamcorper, dis duis
+            aliquet praesent mi donec vivamus egestas rhoncus, commodo nam nostra integer iaculis vehicula sapien.
+            Senectus pharetra cum himenaeo
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+{% javascript %}
+  const heads = document.querySelectorAll('.bienfaits__heading-block'); // Capturing all the head
+  const bodys = document.querySelectorAll('.bienfaits__body'); // Capturing all the body
+
+  // Let loop to grab a specific head
+  heads.forEach((head, index) => {
+    // on specific head click
+    head.addEventListener('click', (e) => {
+      e.preventDefault();
+      // Check if the clicked one is already open
+      const isOpen = head.children[1].classList.contains('roatate-180');
+
+      // Close all accordions first
+      heads.forEach((h, i) => {
+        h.children[1].classList.remove('rotate-180');
+        bodys[i].classList.add('hidden');
+      });
+
+      // If the clicked one wasn't open, open it
+      if (!isOpen) {
+        head.children[1].classList.add('rotate-180');
+        bodys[index].classList.remove('hidden');
+      }
+    });
+  });
+{% endjavascript %}
 
 {% schema %}
 {
