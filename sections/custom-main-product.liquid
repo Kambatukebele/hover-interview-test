@@ -751,27 +751,37 @@
     }
   }
 {% endstyle %}
-
 <section class="customProduct">
   <div class="customProduct__container">
     <!-- product images -->
     <div class="customProduct__images">
-      <div class="customProduct__card customProduct__card--main">
-        {{ 'product-1' | placeholder_svg_tag }}
-        <span class="customProduct__card--announcement">Hautement dosé</span>
-      </div>
-      <div class="customProduct__card">
-        {{ 'product-1' | placeholder_svg_tag }}
-      </div>
-      <div class="customProduct__card">
-        {{ 'product-1' | placeholder_svg_tag }}
-      </div>
-      <div class="customProduct__card">
-        {{ 'product-1' | placeholder_svg_tag }}
-      </div>
-      <div class="customProduct__card">
-        {{ 'product-1' | placeholder_svg_tag }}
-      </div>
+      {%- if product.images != blank -%}
+        {%- for image in product.images -%}
+          <div class="customProduct__card {% if forloop.index ==1 %} customProduct__card--main{% endif %}">
+            {{ image | image_url: width: 641, height: 641 | image_tag }}
+            {% if forloop.index == 1 %}
+              <span class="customProduct__card--announcement">Hautement dosé</span>
+            {%- endif %}
+          </div>
+        {%- endfor -%}
+      {% else %}
+        <div class="customProduct__card customProduct__card--main">
+          {{ 'product-1' | placeholder_svg_tag }}
+          <span class="customProduct__card--announcement">Hautement dosé</span>
+        </div>
+        <div class="customProduct__card">
+          {{ 'product-1' | placeholder_svg_tag }}
+        </div>
+        <div class="customProduct__card">
+          {{ 'product-1' | placeholder_svg_tag }}
+        </div>
+        <div class="customProduct__card">
+          {{ 'product-1' | placeholder_svg_tag }}
+        </div>
+        <div class="customProduct__card">
+          {{ 'product-1' | placeholder_svg_tag }}
+        </div>
+      {%- endif -%}
     </div>
 
     <!-- product details -->
@@ -794,15 +804,14 @@
             </div>
             <!-- Text, price -->
             <div class="details__text-price">
-              <h1 class="details__text">Lorem ipsum</h1>
-              <span class="details__price">35,00$</span>
+              <h1 class="details__text">{{- product.title -}}</h1>
+              <span class="details__price">{{- product.price | money -}}</span>
             </div>
           </div>
           <!-- Description and list -->
           <div class="details__description-list">
             <p class="customProduct__description">
-              Lorem ipsum dolor sit amet consectetur adipiscing elit suscipit nec, mus neque ullamcorper augue nascetur
-              eros vel et leo,
+              {{- product.description -}}
             </p>
             <ul class="customProduct__listBlock">
               <li class="customProduct__list">
