@@ -9,100 +9,67 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "main-product",
+    "custom-product": {
+      "type": "custom-main-product",
       "blocks": {
-        "vendor": {
-          "type": "text",
+        "accordion_JJmtgK": {
+          "type": "accordion",
           "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
+            "accordion_heading": "Bienfaits et Efficacité",
+            "accordion_body": "Lorem ipsum dolor sit amet consectetur adipiscing elit enim fusce, interdum massa ligula montes aenean viverra duis morbi. Montes risus tortor ut fames sapien sociis porttitor"
           }
         },
-        "title": {
-          "type": "title",
-          "settings": {}
-        },
-        "price": {
-          "type": "price",
-          "settings": {}
-        },
-        "variant_picker": {
-          "type": "variant_picker",
+        "accordion_wtr8VH": {
+          "type": "accordion",
           "settings": {
-            "picker_type": "button",
-            "swatch_shape": "circle"
+            "accordion_heading": "Ingrédients",
+            "accordion_body": "Lorem ipsum dolor sit amet consectetur adipiscing elit enim fusce, interdum massa ligula montes aenean viverra duis morbi. Montes risus tortor ut fames sapien sociis porttitor"
           }
         },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
-        "buy_buttons": {
-          "type": "buy_buttons",
+        "accordion_CqqJrG": {
+          "type": "accordion",
           "settings": {
-            "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true
+            "accordion_heading": "Utilisation & Précautions",
+            "accordion_body": "Lorem ipsum dolor sit amet consectetur adipiscing elit enim fusce, interdum massa ligula montes aenean viverra duis morbi. Montes risus tortor ut fames sapien sociis porttitor"
           }
         },
-        "description": {
-          "type": "description",
-          "settings": {}
-        },
-        "share": {
-          "type": "share",
+        "accordion_LEbbax": {
+          "type": "accordion",
           "settings": {
-            "share_label": "Share"
+            "accordion_heading": "Certificats & Études",
+            "accordion_body": "Lorem ipsum dolor sit amet consectetur adipiscing elit enim fusce, interdum massa ligula montes aenean viverra duis morbi. Montes risus tortor ut fames sapien sociis porttitor"
+          }
+        },
+        "accordion_9bwaRH": {
+          "type": "accordion",
+          "settings": {
+            "accordion_heading": "Livraison & Retour",
+            "accordion_body": "Lorem ipsum dolor sit amet consectetur adipiscing elit enim fusce, interdum massa ligula montes aenean viverra duis morbi. Montes risus tortor ut fames sapien sociis porttitor"
           }
         }
       },
       "block_order": [
-        "vendor",
-        "title",
-        "price",
-        "variant_picker",
-        "quantity_selector",
-        "buy_buttons",
-        "description",
-        "share"
+        "accordion_JJmtgK",
+        "accordion_wtr8VH",
+        "accordion_CqqJrG",
+        "accordion_LEbbax",
+        "accordion_9bwaRH"
       ],
       "settings": {
-        "enable_sticky_info": true,
-        "color_scheme": "scheme-1",
-        "media_size": "large",
-        "constrain_to_viewport": true,
-        "media_fit": "contain",
-        "gallery_layout": "stacked",
-        "mobile_thumbnails": "hide",
-        "media_position": "left",
-        "image_zoom": "lightbox",
-        "hide_variants": true,
-        "enable_video_looping": false,
-        "padding_top": 36,
-        "padding_bottom": 12
-      }
-    },
-    "related-products": {
-      "type": "related-products",
-      "settings": {
-        "heading": "You may also like",
-        "heading_size": "h2",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "columns_mobile": "2",
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "padding_top": 36,
-        "padding_bottom": 28
+        "is_sticky_text": "sticky",
+        "product_paddingY": 45,
+        "product_card_radius": 30,
+        "bottom_btn_text": "center",
+        "offer_radius": 15,
+        "bg_btn": "#171714",
+        "text_color_btn": "#ffffff",
+        "hover_bg_btn": "#e2f2f3",
+        "hover_text_color_btn": "#171714",
+        "btn_radius": 100
       }
     }
   },
   "order": [
-    "main",
-    "related-products"
+    "custom-product"
   ]
 }
