@@ -676,7 +676,7 @@
       max-width: 50%;
       gap: 30px;
       padding: 30px 20px;
-      position: sticky;
+      position: {{  section.settings.is_sticky_text }};
       top: 1rem;
     }
 
@@ -946,6 +946,26 @@
   "settings": [
     {
       "type": "header",
+      "content": "Position your content on scroll"
+    },
+    {
+      "type": "select",
+      "id": "is_sticky_text",
+      "label": "Position your product section",
+      "options": [
+        {
+          "label": "Sticky",
+          "value": "sticky"
+        },
+        {
+          "label": "Static",
+          "value": "static"
+        }
+      ],
+      "default": "sticky"
+    },
+    {
+      "type": "header",
       "content": "Padding settings",
       "info": "This is the padding top and bottom for the section"
     },
@@ -979,6 +999,7 @@
       "name": "Custom main product",
       "settings": {
         "product_paddingY": 45,
+        "is_sticky_text": "sticky",
         "product_card_radius": 30
       },
       "blocks": []
