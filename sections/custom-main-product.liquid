@@ -362,21 +362,21 @@
   }
   .details__buttons-btn {
     height: 54px;
-    background-color: rgba(23, 23, 23, 1);
-    color: white;
+    background-color: {{ section.settings.bg_btn }};
+    color: {{ section.settings.text_color_btn }};
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
     padding: 16px 35px;
-    border-radius: 100px;
+    border-radius: {{ section.settings.btn_radius }}px;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
   }
   .details__buttons-btn:hover {
-    background-color: rgba(200, 228, 230, 1);
-    color: rgba(23, 23, 20, 1);
+    background-color: {{ section.settings.hover_bg_btn }};
+    color: {{ section.settings.hover_text_color_btn }};
     transform: scale(1.03);
   }
   .details__btn_text {
@@ -704,7 +704,7 @@
       max-width: 271px;
       width: 100%;
       height: 99px;
-      border-radius: 15px;
+      border-radius: {{ section.settings.offer_radius }}px;
       padding: 25px 20px;
       cursor: pointer;
     }
@@ -1002,6 +1002,58 @@
       "id": "bottom_btn_text",
       "label": "Bottom button text",
       "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Offer radius settings"
+    },
+    {
+      "type": "range",
+      "id": "offer_radius",
+      "label": "Offer card corner radius",
+      "min": 0,
+      "max": 15,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Button settings"
+    },
+    {
+      "type": "color",
+      "id": "bg_btn",
+      "label": "Button background color",
+      "default": "#171714"
+    },
+    {
+      "type": "color",
+      "id": "text_color_btn",
+      "label": "Button text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "hover_bg_btn",
+      "label": "Hover Button background color",
+      "default": "#e2f2f3"
+    },
+    {
+      "type": "color",
+      "id": "hover_text_color_btn",
+      "label": "Hover Button text color",
+      "default": "#171714"
+    },
+    {
+      "type": "range",
+      "id": "btn_radius",
+      "label": "Button corner radius",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "default": 100
     }
   ],
   "presets": [
@@ -1011,7 +1063,13 @@
         "product_paddingY": 45,
         "is_sticky_text": "sticky",
         "product_card_radius": 30,
-        "bottom_btn_text": "center"
+        "bottom_btn_text": "center",
+        "offer_radius": 15,
+        "bg_btn": "#171714",
+        "text_color_btn": "#ffffff",
+        "hover_bg_btn": "#e2f2f3",
+        "hover_text_color_btn": "#171714",
+        "btn_radius": 100
       },
       "blocks": []
     }
