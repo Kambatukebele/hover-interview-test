@@ -586,12 +586,12 @@
   @media screen and (min-width: 1150px) {
     .customProduct__container {
       width: 100%;
-      height: 1370px;
+      min-height: 1370px;
       flex-direction: row;
       align-items: flex-start;
       justify-content: center;
       gap: 45px;
-      padding: 0px 45px;
+      padding: {{section.settings.product_paddingY}}px 45px;
       position: relative;
     }
 
@@ -943,7 +943,23 @@
   },
   "limit": 1,
   "blocks": [],
-  "settings": [],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Padding settings",
+      "info": "This is the padding top and bottom for the section"
+    },
+    {
+      "type": "range",
+      "id": "product_paddingY",
+      "min": 0,
+      "max": 45,
+      "label": "Padding top and bottom",
+      "unit": "px",
+      "step": 1,
+      "default": 45
+    }
+  ],
   "presets": [
     {
       "name": "Custom main product",
