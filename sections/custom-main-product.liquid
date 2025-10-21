@@ -389,7 +389,7 @@
     line-height: var(--line-height-body);
     font-weight: 500;
     color: rgba(23, 23, 20, 1);
-    text-align: center;
+    text-align: {{ section.settings.bottom_btn_text }};
   }
   /* details__bienfaits */
   .details__bienfaits {
@@ -992,6 +992,16 @@
       "step": 1,
       "unit": "px",
       "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Center bottom button text position"
+    },
+    {
+      "type": "text_alignment",
+      "id": "bottom_btn_text",
+      "label": "Bottom button text",
+      "default": "center"
     }
   ],
   "presets": [
@@ -1000,7 +1010,8 @@
       "settings": {
         "product_paddingY": 45,
         "is_sticky_text": "sticky",
-        "product_card_radius": 30
+        "product_card_radius": 30,
+        "bottom_btn_text": "center"
       },
       "blocks": []
     }
