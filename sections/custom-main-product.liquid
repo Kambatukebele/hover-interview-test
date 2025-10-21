@@ -291,10 +291,11 @@
     justify-content: center;
     align-items: center;
     overflow: visible;
+    background-color: rgba(226, 242, 243, 1);
   }
   .details__price__card--modify {
-    background-color: rgba(226, 242, 243, 1);
-    /* color: ; */
+    background-color: rgba(154, 154, 154, 0.15);
+    border: 1px solid rgba(154, 154, 154, 0.15);
   }
   .details__price__card-block {
     display: flex;
@@ -822,27 +823,48 @@
         <!-- Price decouverte and meilleure offre -->
         <div class="details__price-offer-container">
           <!-- price card -->
-          <div class="details__price__card details__price__card--modify">
-            <div class="details__price__card-block">
-              <h4>1 mois</h4>
-              <div class="details__sales_price-block">
-                <span class="details__sales"> -10%</span>
-                <p class="details__sales_price">Soit 1,16$ / jour</p>
+          {% render 'price-action-card',
+            title: 'Découverte',
+            isSales: false,
+            sales: '',
+            number: '1',
+            price: '1,16',
+            background_color: 'rgba(226, 242, 243, 1)',
+            backgroundColorTitle: ''
+          %}
+          {% render 'price-action-card',
+            title: 'Meilleure offre',
+            isSales: true,
+            sales: '10',
+            number: '2',
+            price: '1,05',
+            background_color: '#fff',
+            backgroundColorTitle: 'rgba(243, 243, 243, 1)'
+          %}
+          {% comment %}
+            <!-- price card -->
+            <div class="details__price__card ">
+              <div class="details__price__card-block">
+                <h4>1 mois</h4>
+                <div class="details__sales_price-block">
+                  <span class="details__sales"> -10%</span>
+                  <p class="details__sales_price">Soit 1,16$ / jour</p>
+                </div>
               </div>
+              <span class="details__decouverte">Découverte</span>
             </div>
-            <span class="details__decouverte">Découverte</span>
-          </div>
-          <!-- price card -->
-          <div class="details__price__card details__price__card--modify">
-            <div class="details__price__card-block">
-              <h4>1 mois</h4>
-              <div class="details__sales_price-block">
-                <span class="details__sales"> -10%</span>
-                <p class="details__sales_price">Soit 1,16$ / jour</p>
+            <!-- price card -->
+            <div class="details__price__card details__price__card--modify">
+              <div class="details__price__card-block">
+                <h4>1 mois</h4>
+                <div class="details__sales_price-block">
+                  <span class="details__sales"> -10%</span>
+                  <p class="details__sales_price">Soit 1,16$ / jour</p>
+                </div>
               </div>
+              <span class="details__decouverte  details__decouverte--modidy">Découverte</span>
             </div>
-            <span class="details__decouverte">Découverte</span>
-          </div>
+          {% endcomment %}
         </div>
       </div>
       <!-- Add to to cart button block -->

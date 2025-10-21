@@ -1,0 +1,41 @@
+{% doc %}
+  @description This an price action card.
+  @description Accept variables: title and sales, number, price, background-color,
+
+  @param title - {string} The title of the price action
+  @param sales - {string} The sales promotion
+  @param isSales - {true} true if sales exist
+  @param number - {string} - the number
+  @param price - {string} the price
+  @param background_color - {string} the background color
+  @param backgroundColorTitle - {string} The background color for the title
+
+  @example {% render 'price-action-card', title:"", isSales: "", sales: "", number: "", price: "", background_color: "", backgroundColorTitle: "" %}
+{% enddoc %}
+
+<div style="background-color: {{ background_color }}" class="details__price__card details__price__card--modify">
+  <div class="details__price__card-block">
+    <h4>
+      {%- if number != blank -%}
+        {{ number }}
+      {%- else -%}
+        1
+      {%- endif -%}
+      mois
+    </h4>
+    <div class="details__sales_price-block">
+      {% if isSales == true %}
+        <span class="details__sales"> -{{ sales }}%</span>
+      {% endif %}
+
+      <p class="details__sales_price">Soit {{ price | default: 1.16 }}$ / jour</p>
+    </div>
+  </div>
+  <span style="background-color: {{ backgroundColorTitle }}" class="details__decouverte">
+    {%- if title != blank -%}
+      {{ title }}
+    {%- else -%}
+      Découverte
+    {%- endif -%}
+  </span>
+</div>
